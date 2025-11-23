@@ -1,5 +1,5 @@
 from flask import Flask
-import mysql.connector
+import mysql.connector secrets
 app = Flask(__name__)
 @app.route('/')
 def home():
