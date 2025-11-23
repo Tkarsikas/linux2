@@ -7,6 +7,7 @@ cp /home/ubuntu/linux2/git_script_clonefiles /home/ubuntu/
 sudo cp /home/ubuntu/linux2/lemp-app.service /etc/systemd/system/
 cp /home/ubuntu/linux2/requirements.txt /home/ubuntu/streamlitapp/.streamlit
 sudo cp /home/ubuntu/linux2/streamlit.service /etc/systemd/system/
+cp /home/ubuntu/linux2/streamlitapp.py /home/ubuntu/streamlitapp/
 echo "Files copied"
 cd
 sudo systemctl daemon-reload
