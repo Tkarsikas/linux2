@@ -9,7 +9,7 @@ def home():
     user=config.user,
     password=config.password,
     database=config.database
- )
+    )
     cursor = conn.cursor()
     cursor.execute("SELECT 'Hello from MySQL!'")
     result = cursor.fetchone()
