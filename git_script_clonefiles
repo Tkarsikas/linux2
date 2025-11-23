@@ -5,6 +5,8 @@ cp /home/ubuntu/linux2/app.py /home/ubuntu/lemp-app
 sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
 cp /home/ubuntu/linux2/git_script_clonefiles /home/ubuntu/
 sudo cp /home/ubuntu/linux2/lemp-app.service /etc/systemd/system/
+echo "Files copied"
 cd
 sudo systemctl daemon-reload
 sudo systemctl restart lemp-app
+echo "Service restarted"
