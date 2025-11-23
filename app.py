@@ -1,14 +1,14 @@
 from flask import Flask
-import mysql.connector secrets
+import mysql.connector, secrets
 app = Flask(__name__)
 @app.route('/')
 def home():
     # Connect to MySQL/MariaDB
     conn = mysql.connector.connect(
-    host=config.host,
-    user=config.user,
-    password=config.password,
-    database=config.database
+    host=secrets.host,
+    user=secrets.user,
+    password=secrets.password,
+    database=secrets.database
     )
     cursor = conn.cursor()
     cursor.execute("SELECT 'Hello from MySQL!'")
