@@ -6,3 +6,5 @@ sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
 cp /home/ubuntu/linux2/git_script_clonefiles /home/ubuntu/
 sudo cp /home/ubuntu/linux2/lemp-app.service /etc/systemd/system/
 cd
+sudo systemctl daemon-reload
+sudo systemctl restart lemp-app
