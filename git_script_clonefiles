@@ -1,0 +1,2 @@
+git pull
+cp /home/ubuntu/linux2/app.py /home/ubuntu/lemp-app
