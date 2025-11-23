@@ -5,10 +5,10 @@ app = Flask(__name__)
 def home():
     # Connect to MySQL/MariaDB
     conn = mysql.connector.connect(
-        host="localhost",
-        user="exampleuser",
-        password="change_this_strong_password",
-        database="exampledb"
+    host=config.host,
+    user=config.user,
+    password=config.password,
+    database=config.database
  )
     cursor = conn.cursor()
     cursor.execute("SELECT 'Hello from MySQL!'")
