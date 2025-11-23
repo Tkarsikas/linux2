@@ -1,3 +1,5 @@
 git pull
 cp /home/ubuntu/linux2/app.py /home/ubuntu/lemp-app
 
+cp /home/ubuntu/linux2/lemp-app /home/ubuntu/etc/nginx/sites-available/
+
