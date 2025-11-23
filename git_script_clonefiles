@@ -6,8 +6,10 @@ sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
 cp /home/ubuntu/linux2/git_script_clonefiles /home/ubuntu/
 sudo cp /home/ubuntu/linux2/lemp-app.service /etc/systemd/system/
 cp /home/ubuntu/linux2/requirements.txt /home/ubuntu/streamlitapp/.streamlit
+sudo cp /home/ubuntu/linux2/streamlit.service /etc/systemd/system/
 echo "Files copied"
 cd
 sudo systemctl daemon-reload
 sudo systemctl restart lemp-app
+sudo systemctl restart streamlit
 echo "Service restarted"
