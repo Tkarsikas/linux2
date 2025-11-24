@@ -4,7 +4,7 @@ After=network.target
 [Service]
 User=ubuntu
 WorkingDirectory=/home/ubuntu/streamlitapp
-ExecStart=/bin/bash -c "source /home/ubuntu/lemp-app/venv/bin/activate && pip install -r /home/ubuntu/streamlitapp/requirements.txt && streamlit run /home/ubuntu/streamlitapp/streamlitapp.py"
+ExecStart=/bin/bash -c "source /home/ubuntu/lemp-app/venv/bin/activate && pip install -r /home/ubuntu/streamlitapp/.streamlit/requirements.txt && streamlit run /home/ubuntu/streamlitapp/streamlitapp.py"
 Restart=always
 [Install]
 WantedBy=multi-user.target
