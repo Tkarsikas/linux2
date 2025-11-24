@@ -5,7 +5,6 @@ VENV_DIR="venv"
 #if [ ! -d "$VENV_DIR" ]; then
  #echo "Luodaan virtuaaliympäristö..."
  #python3 -m venv $VENV_DIR
-fi
 # Aktivoi virtuaaliympäristö
 
  cd /home/ubuntu/lemp-app/
