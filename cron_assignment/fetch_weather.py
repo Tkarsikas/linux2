@@ -4,8 +4,7 @@ import mysql.connector, secrets
 from datetime import datetime
 API_KEY = secrets.API_KEY
 CITY = 'Helsinki'
-URL =
-f'https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric'
+URL = f'https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric'
 conn = mysql.connector.connect(host=secrets.host, user=secrets.user,
 password=secrets.password, database=secrets.database)
 cursor = conn.cursor()
