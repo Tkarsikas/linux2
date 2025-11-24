@@ -11,6 +11,9 @@ sudo cp /home/ubuntu/linux2/streamlit.service /etc/systemd/system/
 cp /home/ubuntu/linux2/streamlitapp.py /home/ubuntu/streamlitapp/
 cp /home/ubuntu/linux2/config.toml /home/ubuntu/streamlitapp/.streamlit/
 
+cp /home/ubuntu/linux2/cron_assignment/fetch_weather.py /home/ubuntu/cron_assignment/
+cp /home/ubuntu/linux2/cron_assignment/fetch_weather.sh /home/ubuntu/cron_assignment/
+
 
 echo "Files copied"
 cd
