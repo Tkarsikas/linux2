@@ -9,6 +9,34 @@ st.set_page_config(
     layout="wide"
 )
 
+# Custom CSS for temperature theme
+st.markdown("""
+<style>
+    .stMetricLabel {
+        color: #2E86AB;
+        font-weight: bold;
+    }
+    .stMetricValue {
+        color: #FF6B6B;
+        font-size: 32px;
+    }
+    h1 {
+        color: #FF6B6B;
+        text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.2);
+    }
+    h2 {
+        color: #2E86AB;
+        border-bottom: 3px solid #FF6B6B;
+        padding-bottom: 10px;
+    }
+    hr {
+        background: linear-gradient(90deg, #2E86AB, #FF6B6B);
+        height: 3px;
+        border: none;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 conn = mysql.connector.connect(
     host=secrets.host,
     user=secrets.user,

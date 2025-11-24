@@ -9,6 +9,34 @@ st.set_page_config(
     layout="wide"
 )
 
+# Custom CSS for crypto theme
+st.markdown("""
+<style>
+    .stMetricLabel {
+        color: #1a1a2e;
+        font-weight: bold;
+    }
+    .stMetricValue {
+        color: #FFB700;
+        font-size: 32px;
+    }
+    h1 {
+        color: #FFB700;
+        text-shadow: 2px 2px 4px rgba(255, 183, 0, 0.3);
+    }
+    h2 {
+        color: #1a1a2e;
+        border-bottom: 3px solid #FFB700;
+        padding-bottom: 10px;
+    }
+    hr {
+        background: linear-gradient(90deg, #1a1a2e, #FFB700);
+        height: 3px;
+        border: none;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 conn = mysql.connector.connect(
     host=secrets.host,
     user=secrets.user,
