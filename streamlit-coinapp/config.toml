@@ -1,0 +1,7 @@
+[server]
+headless = true
+port = 8502
+address = "127.0.0.1"
+baseUrlPath = "coin-analysis"
+enableCORS = false
+enableXsrfProtection = false
