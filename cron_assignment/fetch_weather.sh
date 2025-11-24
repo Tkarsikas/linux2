@@ -9,9 +9,11 @@ VENV_DIR="venv"
 
  cd /home/ubuntu/lemp-app/
  source $VENV_DIR/bin/activate
+ cd ~
 # Asenna riippuvuudet requirements.txt-tiedostosta
 if [ -f "requirements.txt" ]; then
  echo "Asennetaan riippuvuudet..."
+ cd /home/ubuntu/cron_assignment/
  pip install --upgrade pip
  pip install -r requirements.txt
 else
