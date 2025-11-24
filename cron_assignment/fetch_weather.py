@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import requests
-import mysql.connector, secrets
+import mysql.connector
+import secrets
 from datetime import datetime
 API_KEY = secrets.API_KEY
 CITY = 'Helsinki'
