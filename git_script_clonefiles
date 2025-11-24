@@ -1,8 +1,5 @@
 
 cd ~
-cd lemp-app
-source venv/bin/activate
-cd ~
 cd linux2
 git pull origin main
 cp /home/ubuntu/linux2/app.py /home/ubuntu/lemp-app
