@@ -29,7 +29,7 @@ cp /home/ubuntu/linux2/cron_assignment/fetch_coincourse.sh /home/ubuntu/cron_ass
     //streamlit-coinapp kopiointi
 cp /home/ubuntu/linux2/requirements.txt /home/ubuntu/streamlit-coinapp/.streamlit/
 sudo cp /home/ubuntu/linux2/coinapp.service /etc/systemd/system/ 
-cp /home/ubuntu/linux2/config.toml /home/ubuntu/streamlit-coinapp/.streamlit/
+cp /home/ubuntu/linux2/streamlit-coinapp/config.toml /home/ubuntu/streamlit-coinapp/.streamlit/
 cp /home/ubuntu/linux2/streamlit-coinapp/streamlit-coinapp.py /home/ubuntu/streamlit-coinapp/
 
 echo "Files copied"
