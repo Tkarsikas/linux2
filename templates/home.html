@@ -23,26 +23,52 @@
             50% {background-position: 100% 50%;}
             100% {background-position: 0% 50%;}
         }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .button-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        a {
+            text-decoration: none;
+        }
         button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 20px 40px;
+            font-size: 20px;
+            font-weight: bold;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.25);
             color: white;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            min-width: 250px;
         }
         button:hover {
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        button:active {
+            transform: translateY(-1px);
         }
     </style>
 </head>
 <body>
     <h1>{{ greeting }}</h1>
-    <form action="/data-analysis">
-        <button type="submit">Siirry Data Analysis -sivulle</button>
-    </form>
+    <div class="button-container">
+        <form action="/data-analysis">
+            <button type="submit">📊 Data Analysis</button>
+        </form>
+        <a href="http://86.50.23.16/coin-analysis/">
+            <button type="button">💰 Coin Analysis</button>
+        </a>
+    </div>
 </body>
 </html>
