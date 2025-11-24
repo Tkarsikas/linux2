@@ -12,6 +12,12 @@ st.set_page_config(
 # Custom CSS for crypto theme
 st.markdown("""
 <style>
+    [data-testid="stAppViewContainer"] {
+        background: linear-gradient(135deg, #FFF8E1 0%, #F3E5F5 100%);
+    }
+    [data-testid="stSidebar"] {
+        background: linear-gradient(135deg, #FFE082 0%, #E1BEE7 100%);
+    }
     .stMetricLabel {
         color: #1a1a2e;
         font-weight: bold;

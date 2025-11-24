@@ -12,6 +12,12 @@ st.set_page_config(
 # Custom CSS for temperature theme
 st.markdown("""
 <style>
+    [data-testid="stAppViewContainer"] {
+        background: linear-gradient(135deg, #E3F2FD 0%, #FCE4EC 100%);
+    }
+    [data-testid="stSidebar"] {
+        background: linear-gradient(135deg, #BBDEFB 0%, #F8BBD0 100%);
+    }
     .stMetricLabel {
         color: #2E86AB;
         font-weight: bold;
