@@ -8,6 +8,8 @@ sudo cp /home/ubuntu/linux2/lemp-app.service /etc/systemd/system/
 cp /home/ubuntu/linux2/requirements.txt /home/ubuntu/streamlitapp/
 sudo cp /home/ubuntu/linux2/streamlit.service /etc/systemd/system/
 cp /home/ubuntu/linux2/streamlitapp.py /home/ubuntu/streamlitapp/
+cp /home/ubuntu/linux2/config.toml /home/ubuntu/streamlitapp/.streamlit/
+
 echo "Files copied"
 cd
 sudo systemctl daemon-reload
