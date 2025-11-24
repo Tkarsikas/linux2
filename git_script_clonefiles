@@ -1,3 +1,4 @@
+cd ~
 if [ -z "$VIRTUAL_ENV" ]; then
     #echo "Virtuaaliympäristö ei ole aktivoitu. Aktivoidaan nyt..."
     cd ~/lemp-app || { echo "Kansion vaihtaminen epäonnistui"; exit 1; }
@@ -6,7 +7,7 @@ if [ -z "$VIRTUAL_ENV" ]; then
 else
     echo "Virtuaaliympäristö on jo aktivoitu: $VIRTUAL_ENV"
 fi
-
+cd ~
 cd linux2
 git pull
 cp /home/ubuntu/linux2/app.py /home/ubuntu/lemp-app
