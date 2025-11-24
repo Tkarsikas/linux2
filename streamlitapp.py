@@ -9,17 +9,26 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS for temperature theme
+# Custom CSS for temperature theme with waving dark background
 st.markdown("""
 <style>
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #E3F2FD 0%, #FCE4EC 100%);
+        background: linear-gradient(-45deg, #0a1428, #1a3a52, #6b1b1b, #0a1428);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
     }
     [data-testid="stSidebar"] {
-        background: linear-gradient(135deg, #BBDEFB 0%, #F8BBD0 100%);
+        background: linear-gradient(-45deg, #0a0f1b, #0f2a3d, #4d1515, #0a0f1b);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
     }
     .stMetricLabel {
-        color: #2E86AB;
+        color: #87CEEB;
         font-weight: bold;
     }
     .stMetricValue {
@@ -28,15 +37,15 @@ st.markdown("""
     }
     h1 {
         color: #FF6B6B;
-        text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.2);
+        text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.4);
     }
     h2 {
-        color: #2E86AB;
+        color: #87CEEB;
         border-bottom: 3px solid #FF6B6B;
         padding-bottom: 10px;
     }
     hr {
-        background: linear-gradient(90deg, #2E86AB, #FF6B6B);
+        background: linear-gradient(90deg, #87CEEB, #FF6B6B);
         height: 3px;
         border: none;
     }

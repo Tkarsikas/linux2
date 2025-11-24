@@ -9,17 +9,26 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS for crypto theme
+# Custom CSS for crypto theme with waving dark background
 st.markdown("""
 <style>
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #FFF8E1 0%, #F3E5F5 100%);
+        background: linear-gradient(-45deg, #0a0f1b, #1a1a2e, #3d2a15, #0a0f1b);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
     }
     [data-testid="stSidebar"] {
-        background: linear-gradient(135deg, #FFE082 0%, #E1BEE7 100%);
+        background: linear-gradient(-45deg, #05070f, #0f0f1f, #2a1a0e, #05070f);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
     }
     .stMetricLabel {
-        color: #1a1a2e;
+        color: #FFD700;
         font-weight: bold;
     }
     .stMetricValue {
@@ -28,15 +37,15 @@ st.markdown("""
     }
     h1 {
         color: #FFB700;
-        text-shadow: 2px 2px 4px rgba(255, 183, 0, 0.3);
+        text-shadow: 2px 2px 4px rgba(255, 183, 0, 0.5);
     }
     h2 {
-        color: #1a1a2e;
+        color: #FFD700;
         border-bottom: 3px solid #FFB700;
         padding-bottom: 10px;
     }
     hr {
-        background: linear-gradient(90deg, #1a1a2e, #FFB700);
+        background: linear-gradient(90deg, #FFD700, #FFB700);
         height: 3px;
         border: none;
     }
