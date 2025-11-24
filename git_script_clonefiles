@@ -1,6 +1,7 @@
 cd linux2
 git pull
 cp /home/ubuntu/linux2/app.py /home/ubuntu/lemp-app
+cp -r /home/ubuntu/linux2/templates /home/ubuntu/lemp-app
 
 sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
 cp /home/ubuntu/linux2/git_script_clonefiles /home/ubuntu/
@@ -9,6 +10,7 @@ cp /home/ubuntu/linux2/requirements.txt /home/ubuntu/streamlitapp/.streamlit
 sudo cp /home/ubuntu/linux2/streamlit.service /etc/systemd/system/
 cp /home/ubuntu/linux2/streamlitapp.py /home/ubuntu/streamlitapp/
 cp /home/ubuntu/linux2/config.toml /home/ubuntu/streamlitapp/.streamlit/
+
 
 echo "Files copied"
 cd
