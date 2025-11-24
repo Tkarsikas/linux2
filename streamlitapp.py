@@ -9,8 +9,7 @@ conn = mysql.connector.connect(
     password=secrets.password,
     database=secrets.database
 )
-df = pd.read_sql('SELECT * FROM weather_data ORDER BY timestamp DESC LIMIT 50',
-conn)
+df = pd.read_sql('SELECT * FROM weather_data ORDER BY timestamp DESC LIMIT 50', conn)
 conn.close()
 st.title('Säädata Helsingistä')
 st.dataframe(df)
