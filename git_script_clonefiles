@@ -1,13 +1,7 @@
 
 cd ~
-if [ -z "$VIRTUAL_ENV" ]; then
-    #echo "Virtuaaliympäristö ei ole aktivoitu. Aktivoidaan nyt..."
-    cd ~/lemp-app || { echo "Kansion vaihtaminen epäonnistui"; exit 1; }
-    source venv/bin/activate
-    echo "Virtuaaliympäristö aktivoitu."
-else
-    echo "Virtuaaliympäristö on jo aktivoitu: $VIRTUAL_ENV"
-fi
+cd lemp-app
+source venv/bin/activate
 cd ~
 cd linux2
 git pull origin main
