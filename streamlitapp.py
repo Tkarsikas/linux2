@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 # Cachettaa tietokantayhteyden ja datan
-@st.cache_data(ttl=600)
+@st.cache_data
 def mySql():
     # Initialize connection using Streamlit secrets
     conn = st.connection('mysql', type='sql')
