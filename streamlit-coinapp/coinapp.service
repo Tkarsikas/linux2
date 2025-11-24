@@ -5,7 +5,7 @@ After=network.target
 User=ubuntu
 WorkingDirectory=/home/ubuntu/streamlit-coinapp
 Environment="PATH=/home/ubuntu/lemp-app/venv/bin"
-ExecStart=/bin/bash -c "source /home/ubuntu/lemp-app/venv/bin/activate && pip install -r /home/ubuntu/streamlit-coinapp/.streamlit/requirements.txt && streamlit run /home/ubuntu/streamlit-coinapp/streamlit-coinapp.py --server.port 8502 --server.baseUrlPath=coin_analysis --server.enableCORS false"
+ExecStart=/bin/bash -c "source /home/ubuntu/lemp-app/venv/bin/activate && pip install -r /home/ubuntu/streamlit-coinapp/.streamlit/requirements.txt && streamlit run /home/ubuntu/streamlit-coinapp/streamlit-coinapp.py --server.port 8502 --server.baseUrlPath=coin-analysis --server.enableCORS false"
 Restart=always
 [Install]
 WantedBy=multi-user.target
