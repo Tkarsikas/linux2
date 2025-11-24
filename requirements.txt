@@ -4,3 +4,4 @@ scipy
 mysqlclient
 SQLAlchemy
 streamlit
+mysql-connector-python
