@@ -1,11 +1,13 @@
 import streamlit as st
-import mysql.connector, secrets
+import mysql.connector
 import pandas as pd
+import secrets
+
 conn = mysql.connector.connect(
-        host=secrets.host,
-        user=secrets.user,
-        password=secrets.password,
-        database=secrets.database
+    host=secrets.host,
+    user=secrets.user,
+    password=secrets.password,
+    database=secrets.database
 )
 df = pd.read_sql('SELECT * FROM weather_data ORDER BY timestamp DESC LIMIT 50',
 conn)
