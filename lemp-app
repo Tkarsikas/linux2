@@ -2,6 +2,10 @@ server {
     listen 80;
     server_name 86.50.23.16;  # oma IP tai domain
 
+    # Etusivu location
+    root /var/www/html;
+    index index.html;
+
     # Flask backend
     location / {
         proxy_pass http://127.0.0.1:5000;
@@ -14,7 +18,7 @@ server {
 
     # Streamlit backend
     location /data-analysis/ {
-        proxy_pass http://127.0.0.1:8501;
+        proxy_pass http://127.0.0.1:8501/data-analysis/;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
