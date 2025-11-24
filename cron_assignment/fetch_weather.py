@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/ubuntu/lemp-app/venv/bin/python3
 import requests
 import mysql.connector
 import secrets
