@@ -5,28 +5,28 @@ git pull origin main
 cp /home/ubuntu/linux2/app.py /home/ubuntu/lemp-app
 cp -r /home/ubuntu/linux2/templates /home/ubuntu/lemp-app
 
-    //lemp-app kopiointi
+    echo "lemp-app kopiointi"
 sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
 cp /home/ubuntu/linux2/git_script_clonefiles /home/ubuntu/
 sudo cp /home/ubuntu/linux2/lemp-app.service /etc/systemd/system/
 
-    //streamlitapp kopiointi
+    echo "streamlitapp kopiointi"
 cp /home/ubuntu/linux2/requirements.txt /home/ubuntu/streamlitapp/.streamlit
 sudo cp /home/ubuntu/linux2/streamlit.service /etc/systemd/system/
 cp /home/ubuntu/linux2/streamlitapp.py /home/ubuntu/streamlitapp/
 cp /home/ubuntu/linux2/config.toml /home/ubuntu/streamlitapp/.streamlit/
 
-    //cron_assignment weather kopioint
+    echo "cron_assignment weather kopioint"
 cp /home/ubuntu/linux2/cron_assignment/fetch_weather.py /home/ubuntu/cron_assignment/
 cp /home/ubuntu/linux2/cron_assignment/fetch_weather.sh /home/ubuntu/cron_assignment/
 cp /home/ubuntu/linux2/cron_assignment/requirements.txt /home/ubuntu/cron_assignment/
 
-    //cron_assignment coincourse kopiointi
+    echo "cron_assignment coincourse kopiointi"
 cp /home/ubuntu/linux2/cron_assignment/fetch_coincourse.py /home/ubuntu/cron_assignment/
 cp /home/ubuntu/linux2/cron_assignment/fetch_coincourse.sh /home/ubuntu/cron_assignment/
 
 
-    //streamlit-coinapp kopiointi
+    echo "streamlit-coinapp kopiointi"
 cp /home/ubuntu/linux2/requirements.txt /home/ubuntu/streamlit-coinapp/.streamlit/
 sudo cp /home/ubuntu/linux2/streamlit-coinapp/coinapp.service /etc/systemd/system/ 
 cp /home/ubuntu/linux2/streamlit-coinapp/config.toml /home/ubuntu/streamlit-coinapp/.streamlit/
