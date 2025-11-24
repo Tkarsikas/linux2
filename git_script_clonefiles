@@ -15,6 +15,7 @@ cp /home/ubuntu/linux2/config.toml /home/ubuntu/streamlitapp/.streamlit/
 
 cp /home/ubuntu/linux2/cron_assignment/fetch_weather.py /home/ubuntu/cron_assignment/
 cp /home/ubuntu/linux2/cron_assignment/fetch_weather.sh /home/ubuntu/cron_assignment/
+cp /home/ubuntu/linux2/cron_assignment/requirements.txt /home/ubuntu/cron_assignment/
 
 
 echo "Files copied"
