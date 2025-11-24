@@ -1,7 +1,7 @@
 import streamlit as st
 import mysql.connector
 import pandas as pd
-import secrets
+import my_secrets as secrets
 
 conn = mysql.connector.connect(
     host=secrets.host,
