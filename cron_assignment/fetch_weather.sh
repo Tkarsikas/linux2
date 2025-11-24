@@ -2,18 +2,15 @@
 # Polku virtuaaliympäristöön
 VENV_DIR="venv"
 # Luo virtuaaliympäristö, jos ei ole olemassa
-#if [ ! -d "$VENV_DIR" ]; then
- #echo "Luodaan virtuaaliympäristö..."
- #python3 -m venv $VENV_DIR
+if [ ! -d "$VENV_DIR" ]; then
+ echo "Luodaan virtuaaliympäristö..."
+ python3 -m venv $VENV_DIR
+fi
 # Aktivoi virtuaaliympäristö
-
- cd /home/ubuntu/lemp-app/
- source $VENV_DIR/bin/activate
- cd ~
+source $VENV_DIR/bin/activate
 # Asenna riippuvuudet requirements.txt-tiedostosta
 if [ -f "requirements.txt" ]; then
  echo "Asennetaan riippuvuudet..."
- cd /home/ubuntu/cron_assignment/
  pip install --upgrade pip
  pip install -r requirements.txt
 else
