@@ -1,0 +1,5 @@
+git pull
+
+cp /home/ubuntu/linux2/scripts/git_script_mqtt /home/ubuntu/scripts/
+cd /home/ubuntu/scripts && ./git_script_mqtt
+cp -r /home/ubuntu/linux2/mqtt-chat /home/ubuntu/
