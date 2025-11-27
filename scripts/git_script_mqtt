@@ -1,8 +1,7 @@
 cd ~
 cd linux2
-git pull
+git pull origin main
 echo "git pull done"
 cp /home/ubuntu/linux2/scripts/git_script_mqtt /home/ubuntu/scripts/
-cd /home/ubuntu/scripts && ./git_script_mqtt
 cp -r /home/ubuntu/linux2/mqtt-chat /home/ubuntu/
 echo "mqtt-chat copied"
