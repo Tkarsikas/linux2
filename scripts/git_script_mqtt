@@ -1,5 +1,5 @@
 cd ~
-cd /linux2
+cd linux2
 git pull
 echo "git pull done"
 cp /home/ubuntu/linux2/scripts/git_script_mqtt /home/ubuntu/scripts/
