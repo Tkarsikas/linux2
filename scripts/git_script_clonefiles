@@ -7,7 +7,7 @@ cp -r /home/ubuntu/linux2/templates /home/ubuntu/lemp-app
 
     echo "lemp-app kopiointi"
 sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
-cp /home/ubuntu/linux2/git_script_clonefiles /home/ubuntu/
+cp /home/ubuntu/linux2/scripts/git_script_clonefiles /home/ubuntu/scripts
 sudo cp /home/ubuntu/linux2/lemp-app.service /etc/systemd/system/
 
     echo "streamlitapp kopiointi"
