@@ -14,6 +14,7 @@ cp /home/ubuntu/linux2/mqtt-chat/api.py /home/ubuntu/mqtt-chat/
 cp /home/ubuntu/linux2/mqtt-chat/mqtt-chat.py /home/ubuntu/mqtt-chat/
 echo "mqtt-chat copied"
 sudo systemctl daemon-reload
+sudo systemctl restart nginx
 sudo systemctl restart mqtt-logger
 sudo systemctl restart api
 echo "mqtt-chat services restarted"
