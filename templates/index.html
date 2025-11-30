@@ -182,7 +182,7 @@
                 const response = await fetch('/api/messages?limit=50'); // sama domain/proxy
                 const messages = await response.json();
                 messages.forEach(m => {
-                    addMessage(`${m.nickname}: ${m.message} <small style="color:#999">${m.timestamp}</small>`);
+                    addMessage(`${m.nickname}: ${m.message}`);
             });
             } catch (error) {
                 console.error("Failed to load message history:", error);
