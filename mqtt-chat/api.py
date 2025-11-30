@@ -18,14 +18,14 @@ def get_messages():
     conn = mysql.connector.connect(**DB_CONFIG)
     cursor = conn.cursor(dictionary=True)
     cursor.execute('''
-    SELECT id, nickname, message, client_id, created_at
-    FROM messages ORDER BY created_at DESC LIMIT %s
+        SELECT id, nickname, message, client_id, created_at
+        FROM messages ORDER BY created_at DESC LIMIT %s
     ''', (limit,))
     messages = cursor.fetchall()
- for msg in messages:
-    msg['created_at'] = msg['created_at'].isoformat()
+    for msg in messages:
+        msg['created_at'] = msg['created_at'].isoformat()
     cursor.close()
     conn.close()
- return jsonify(messages[::-1])
+    return jsonify(messages[::-1])
 if __name__ == '__main__':
  app.run(host='127.0.0.1', port=5000)
