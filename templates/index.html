@@ -179,7 +179,7 @@
     <script>
                 async function loadHistory() {
             try {
-                const response = await fetch('/api/messages'); // sama domain/proxy
+                const response = await fetch('/api/messages?limit=50'); // sama domain/proxy
                 const messages = await response.json();
                 messages.forEach(m => {
                     addMessage(`${m.nickname}: ${m.message} <small style="color:#999">${m.timestamp}</small>`);
