@@ -8,4 +8,5 @@ cp /home/ubuntu/linux2/mqtt-chat/mosquitto/config/mosquitto.conf /home/ubuntu/mq
 sudo cp /home/ubuntu/linux2/templates/index.html /var/www/html/chat/
 sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
 cp /home/ubuntu/linux2/mqtt-chat/mqtt_logger.py /home/ubuntu/mqtt-chat/
+sudo cp /home/ubuntu/linux2/mqtt-chat/mqtt_logger.service /etc/systemd/system/
 echo "mqtt-chat copied"
