@@ -9,13 +9,18 @@ DB_CONFIG = {
     "host": secrets.host,
     "user": secrets.user,
     "password": secrets.password,
-    "database": secrets.database
+    "database": secrets.database,
+    "ssl_disabled": True
 }
 @app.route('/api/messages', methods=['GET'])
 def get_messages():
     """Hae viestit tietokannasta."""
     limit = request.args.get('limit', 50, type=int)
+    try:
     conn = mysql.connector.connect(**DB_CONFIG)
+    except mysql.connector.Error as err:
+        logger.error(f"Tietokantavirhe: {err}")
+        return jsonify({"error": f"Tietokantavirhe: {err}"}), 500
     cursor = conn.cursor(dictionary=True)
     cursor.execute('''
         SELECT id, nickname, message, client_id, created_at
