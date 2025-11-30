@@ -19,8 +19,8 @@ def get_messages():
     cursor = conn.cursor(dictionary=True)
     cursor.execute('''
         SELECT id, nickname, message, client_id, created_at
-        FROM messages ORDER BY created_at DESC LIMIT %s
-    ''', (limit,))
+        FROM messages ORDER BY created_at DESC
+    ''')
     messages = cursor.fetchall()
     for msg in messages:
         msg['created_at'] = msg['created_at'].isoformat()
