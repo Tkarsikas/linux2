@@ -1,1 +1,96 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        #messages {
+            border: 1px solid #ccc;
+            height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .message {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+        }
+        #messageInput {
+            width: 80%;
+            padding: 8px;
+            font-size: 14px;
+        }
+        button {
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>MQTT Chat</h1>
+    <div id="messages"></div>
+    <input type="text" id="messageInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        const broker = "86.50.23.16"; // Your server IP
+        const port = 9001; // WebSocket port
+        const topic = "chat/messages";
+        const clientId = "mqtt_client_" + Math.random().toString(36).substr(2, 9);
+
+        let client = new Paho.MQTT.Client(broker, port, clientId);
+
+        client.onConnectionLost = onConnectionLost;
+        client.onMessageArrived = onMessageArrived;
+
+        client.connect({ onSuccess: onConnect });
+
+        function onConnect() {
+            console.log("Connected to MQTT broker");
+            client.subscribe(topic);
+            addMessage("System", "Connected to chat");
+        }
+
+        function onConnectionLost(responseObject) {
+            console.log("Connection lost: " + responseObject.errorMessage);
+            addMessage("System", "Disconnected from chat");
+        }
+
+        function onMessageArrived(message) {
+            addMessage("User", message.payloadString);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("messageInput");
+            const text = input.value.trim();
+            if (text !== "") {
+                const message = new Paho.MQTT.Message(text);
+                message.destinationName = topic;
+                client.send(message);
+                input.value = "";
+            }
+        }
+
+        function addMessage(sender, text) {
+            const messagesDiv = document.getElementById("messages");
+            const messageEl = document.createElement("div");
+            messageEl.className = "message";
+            messageEl.textContent = `${sender}: ${text}`;
+            messagesDiv.appendChild(messageEl);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>
