@@ -10,3 +10,5 @@ sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
 cp /home/ubuntu/linux2/mqtt-chat/mqtt_logger.py /home/ubuntu/mqtt-chat/
 sudo cp /home/ubuntu/linux2/mqtt-chat/mqtt-logger.service /etc/systemd/system
 echo "mqtt-chat copied"
+sudo systemctl daemon-reload
+
