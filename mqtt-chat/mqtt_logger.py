@@ -10,7 +10,6 @@ import paho.mqtt.client as mqtt
 import mysql.connector
 from mysql.connector import pooling
 import sys
-sys.path.insert(0, '/home/ubuntu/linux2')
 import secrets
 
 # Konfiguraatio
