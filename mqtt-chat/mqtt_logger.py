@@ -69,17 +69,26 @@ def on_connect(client, userdata, flags, rc):
         logger.error(f"Yhteysvirhe, koodi: {rc}")
 
 def on_message(client, userdata, msg):
-    """Käsittele saapuva MQTT-viesti."""
     try:
         payload = msg.payload.decode('utf-8')
-        data = json.loads(payload)
+        try:
+            data = json.loads(payload)
+        except json.JSONDecodeError:
+            # Automaattinen fallback tavalliselle tekstille
+            logger.warning(f"Virheellinen JSON, tulkitaan tekstiksi: {payload}")
+            data = {
+                "nickname": "WebUser",
+                "text": payload,
+                "clientId": "web"
+            }
+
         nickname = data.get('nickname', 'Tuntematon')[:50]
         message = data.get('text', '')
         client_id = data.get('clientId', '')[:100]
+
         if message:
             save_message(nickname, message, client_id)
-    except json.JSONDecodeError:
-        logger.warning(f"Virheellinen JSON: {msg.payload}")
+
     except Exception as e:
         logger.error(f"Virhe: {e}")
 
