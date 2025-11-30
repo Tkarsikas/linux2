@@ -297,11 +297,11 @@
 
 
         async function loadHistory() {
-            const response = await fetch('/history');
+            const response = await fetch('/api/messages');
             const messages = await response.json();
             const chatDiv = document.getElementById('chat-history');
             chatDiv.innerHTML = messages.map(m => 
-            `<p><strong>${m.username}:</strong> ${m.message} <em>${m.timestamp}</em></p>`
+            `<p><strong>${m.nickname}:</strong> ${m.message} <em>${m.created_at}</em></p>`
             ).join('');
         }
 
