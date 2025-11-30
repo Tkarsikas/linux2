@@ -12,6 +12,7 @@ DB_CONFIG = {
     "user": secrets.user,
     "password": secrets.password,
     "database": secrets.database,
+    "ssl_disabled": True
 }
 
 @app.route('/api/messages', methods=['GET'])
