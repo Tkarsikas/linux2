@@ -71,14 +71,24 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     try:
         payload = msg.payload.decode('utf-8')
+
         try:
             data = json.loads(payload)
         except json.JSONDecodeError:
-            # Automaattinen fallback tavalliselle tekstille
-            logger.warning(f"Virheellinen JSON, tulkitaan tekstiksi: {payload}")
+            logger.warning(f"Virheellinen JSON, yritetään tekstiparsintaa: {payload}")
+
+            # Muoto: "nickname: message"
+            if ":" in payload:
+                parts = payload.split(":", 1)
+                nickname = parts[0].strip()
+                message = parts[1].strip()
+            else:
+                nickname = "WebUser"
+                message = payload.strip()
+
             data = {
-                "nickname": "WebUser",
-                "text": payload,
+                "nickname": nickname,
+                "text": message,
                 "clientId": "web"
             }
 
@@ -91,6 +101,7 @@ def on_message(client, userdata, msg):
 
     except Exception as e:
         logger.error(f"Virhe: {e}")
+
 
 def main():
     """Pääohjelma."""
