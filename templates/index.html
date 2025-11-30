@@ -153,7 +153,6 @@
     </style>
 </head>
 <body>
-    <div id="chat-history"></div>
     <div class="header">
         <h1>💬 MQTT Chat</h1>
         <div class="status-indicator">
@@ -293,20 +292,6 @@
                 setNickname();
             }
         });
-        <div id="chat-history"></div>
-
-
-        async function loadHistory() {
-            const response = await fetch('/api/messages');
-            const messages = await response.json();
-            const chatDiv = document.getElementById('chat-history');
-            chatDiv.innerHTML = messages.map(m => 
-            `<p><strong>${m.nickname}:</strong> ${m.message} <em>${m.created_at}</em></p>`
-            ).join('');
-        }
-
-        loadHistory();
-
     </script>
 </body>
 </html>
