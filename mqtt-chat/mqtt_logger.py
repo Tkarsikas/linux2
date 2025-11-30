@@ -9,6 +9,7 @@ from datetime import datetime
 import paho.mqtt.client as mqtt
 import mysql.connector
 from mysql.connector import pooling
+import secrets
 # Konfiguraatio
 MQTT_BROKER = "localhost"
 MQTT_PORT = 1883
