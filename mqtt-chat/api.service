@@ -1,13 +1,12 @@
 [Unit]
 Description=MQTT Chat API
-After=network.target mysql.service docker.service
-Wants=mysql.service
+After=network.target mysql.service
+
 [Service]
-Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu/mqtt-chat
 ExecStart=/usr/bin/gunicorn -w 4 -b 127.0.0.1:5001 api:app
 Restart=always
-RestartSec=10
+RestartSec=5
 [Install]
 WantedBy=multi-user.target
