@@ -3,7 +3,8 @@ cd linux2
 git pull origin main
 echo "git pull done"
 cp /home/ubuntu/linux2/scripts/git_script_mqtt /home/ubuntu/scripts/
-cp -r /home/ubuntu/linux2/mqtt-chat /home/ubuntu/
+cp /home/ubuntu/linux2/mqtt-chat/docker-compose.yml /home/ubuntu/mqtt-chat/
+cp /home/ubuntu/linux2/mqtt-chat/mosquitto/config/mosquitto.conf /home/ubuntu/mqtt-chat/mosquitto/config/mosquitto.conf
 sudo cp /home/ubuntu/linux2/templates/index.html /var/www/html/chat/
 sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
 echo "mqtt-chat copied"
