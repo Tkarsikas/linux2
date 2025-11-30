@@ -34,7 +34,7 @@ db_pool = pooling.MySQLConnectionPool(
 )
 def save_message(nickname, message, client_id):
 
-"""Tallenna viesti tietokantaan."""
+ """Tallenna viesti tietokantaan."""
  try:
  conn = db_pool.get_connection()
  cursor = conn.cursor()
