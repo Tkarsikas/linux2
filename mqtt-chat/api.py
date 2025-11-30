@@ -16,21 +16,28 @@ DB_CONFIG = {
 def get_messages():
     """Hae viestit tietokannasta."""
     limit = request.args.get('limit', 50, type=int)
+
     try:
-    conn = mysql.connector.connect(**DB_CONFIG)
+        conn = mysql.connector.connect(**DB_CONFIG)
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute('''
+            SELECT id, nickname, message, client_id, created_at
+            FROM messages ORDER BY created_at DESC LIMIT %s
+        ''', (limit,))
+        messages = cursor.fetchall()
+
+        for msg in messages:
+            msg['created_at'] = msg['created_at'].isoformat()
+
     except mysql.connector.Error as err:
-        logger.error(f"Tietokantavirhe: {err}")
-        return jsonify({"error": f"Tietokantavirhe: {err}"}), 500
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute('''
-        SELECT id, nickname, message, client_id, created_at
-        FROM messages ORDER BY created_at DESC LIMIT %s
-    ''', (limit,))
-    messages = cursor.fetchall()
-    for msg in messages:
-        msg['created_at'] = msg['created_at'].isoformat()
-    cursor.close()
-    conn.close()
+        return jsonify({"error": str(err)}), 500
+
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
     return jsonify(messages[::-1])
 if __name__ == '__main__':
- app.run(host='127.0.0.1', port=5000)
+ app.run(host='127.0.0.1', port=5001)
