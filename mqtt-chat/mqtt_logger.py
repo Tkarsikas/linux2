@@ -20,7 +20,8 @@
         "host": secrets.host,
         "user": secrets.user,
         "password": secrets.password,
-        "database": secrets.database
+        "database": secrets.database,
+        "ssl_disabled": True
     }
 
     # Lokitus
