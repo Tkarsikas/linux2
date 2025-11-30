@@ -199,7 +199,6 @@
             addSystemMessage("✓ Connected to chat");
             document.getElementById("messageInput").disabled = false;
             document.getElementById("sendBtn").disabled = false;
-            loadOldMessages();
         }
 
         function onConnectionLost(responseObject) {
@@ -227,22 +226,6 @@
                 text.textContent = "Disconnected";
                 text.style.color = "#ff4444";
             }
-        }
-
-        async function loadOldMessages() {
-            try {
-                const response = await fetch('http://127.0.0.1:5001/api/messages?limit=100');
-                const messages = await response.json();
-
-                messages.forEach(msg => {
-                    const formatted = `${msg.nickname}: ${msg.message}`;
-                    addMessage(formatted);
-                });
-
-            console.log("Old messages loaded");
-        } catch (err) {
-            console.error("Failed to load old messages:", err);
-        }
         }
 
         function setNickname() {
