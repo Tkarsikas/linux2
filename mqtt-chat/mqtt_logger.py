@@ -17,12 +17,12 @@ import secrets
 MQTT_BROKER = "localhost"
 MQTT_PORT = 1883
 MQTT_TOPIC = "chat/messages"
-
 DB_CONFIG = {
     "host": secrets.host,
     "user": secrets.user,
     "password": secrets.password,
-    "database": secrets.database
+    "database": secrets.database,
+    "ssl_disabled": True
 }
 
 # Lokitus
