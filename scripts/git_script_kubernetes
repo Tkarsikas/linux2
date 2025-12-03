@@ -5,3 +5,5 @@ cp /home/ubuntu/linux2/scripts/git_script_kubernetes /home/ubuntu/scripts/
 echo "git pull done, script copied"
 cp /home/ubuntu/linux2/kubernetes/nginx-pod.yaml /home/ubuntu/kubernetes/
 echo "nginx-pod.yaml copied"
+cp -r /home/ubuntu/linux2/kubernetes/db /home/ubuntu/kubernetes/
+echo "db directory copied"
