@@ -7,3 +7,5 @@ cp /home/ubuntu/linux2/kubernetes/nginx-pod.yaml /home/ubuntu/kubernetes/
 echo "nginx-pod.yaml copied"
 cp -r /home/ubuntu/linux2/kubernetes/db /home/ubuntu/kubernetes/
 echo "db directory copied"
+cp -r /home/ubuntu/linux2/kubernetes/backend /home/ubuntu/kubernetes/
+echo "backend directory copied"
