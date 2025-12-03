@@ -1,7 +1,7 @@
 
 cd ~/linux2
 git pull
-cp /home/ubuntu/linux2/git_script_kubernetes /home/ubuntu/scripts/
+cp /home/ubuntu/linux2/scripts/git_script_kubernetes /home/ubuntu/scripts/
 echo "git pull done, script copied"
 cp /home/ubuntu/linux2/kubernetes/nginx-pod.yaml /home/ubuntu/kubernetes/
 echo "nginx-pod.yaml copied"
