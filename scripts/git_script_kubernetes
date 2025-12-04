@@ -9,3 +9,5 @@ cp -r /home/ubuntu/linux2/kubernetes/db /home/ubuntu/kubernetes/
 echo "db directory copied"
 cp -r /home/ubuntu/linux2/kubernetes/backend /home/ubuntu/kubernetes/
 echo "backend directory copied"
+cp -r /home/ubuntu/linux2/kubernetes/frontend /home/ubuntu/kubernetes/
+echo "frontend directory copied"
