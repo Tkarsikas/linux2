@@ -3,9 +3,9 @@ server {
     server_name kubernetes; # Tai palvelimen julkinen IP/domain
 
     # LEMP-stack Kubernetesissa
-    location /kube {
+    location /kube/ {
         # Korvaa tämä oikealla Minikube IP:llä ja portilla
-        proxy_pass http://192.168.49.2:30127/kube;
+        proxy_pass http://192.168.49.2:30127/kube/;
 
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
