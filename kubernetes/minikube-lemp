@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name tomtominkuber; # Tai palvelimen julkinen IP/domain
+    server_name 192.168.49.2; # Tai palvelimen julkinen IP/domain
 
     # LEMP-stack Kubernetesissa
     location /kube/ {
