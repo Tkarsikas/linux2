@@ -17,3 +17,16 @@ echo "frontend directory copied"
 sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
 echo "lemp-app copied to nginx sites-available"
 sudo systemctl reload nginx
+
+
+cd ~/kubernetes
+eval $(minikube docker-env)
+cd backend
+docker build -t backend:latest .
+
+cd ../frontend
+docker build -t frontend:latest .
+
+kubectl rollout restart deployment/backend
+kubectl rollout restart deployment/frontend
+echo "kubernetes deployments restarted"
