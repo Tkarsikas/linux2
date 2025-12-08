@@ -53,27 +53,22 @@ def init_db():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/api/add-user')
+@app.route('/api/add-user', methods=['POST'])
 def add_user():
     try:
+        data = request.get_json()
+        name = data.get('name')
+        email = data.get('email')
         conn = get_db_connection()
         cursor = conn.cursor()
-        # cursor.execute("""
-        #     CREATE TABLE IF NOT EXISTS users (
-        #         id INT AUTO_INCREMENT PRIMARY KEY,
-        #         name VARCHAR(100),
-        #         email VARCHAR(100)
-        #     )
-        # """)
         cursor.execute("""
             INSERT INTO users (name, email) VALUES
-            ('testi1', 'testi2@example.com'),
-            ('testi2', 'testi2@example.com')
+            (%s, %s)
         """)
         conn.commit()
         cursor.close()
         conn.close()
-        return jsonify({"message": "use added"})
+        return jsonify({"message": "use added successfully"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

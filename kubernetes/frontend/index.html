@@ -50,6 +50,11 @@
             <button onclick="checkHealth()">Check Backend Health</button>
             <button onclick="initDB()">Initialize Database</button>
             <button onclick="getUsers()">Get Users</button>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <input type="text" id="nameInput" placeholder="Nimi" />
+            <input type="email" id="emailInput" placeholder="Sähköposti" />
             <button onclick="addUser()">Add User</button>
         </div>
 
@@ -81,15 +86,37 @@
             }
         }
 
-                async function addUser() {
+        async function addUser() {
+            const name = document.getElementById('nameInput').value.trim();
+            const email = document.getElementById('emailInput').value.trim();
+
+            if (!name || !email) {
+                alert('Täytä sekä nimi että sähköposti!');
+                return;
+            }
+
             try {
-                const response = await fetch('api/add-user');
+                const response = await fetch('/api/add-user', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({name: name, email: email})
+                });
+
                 const data = await response.json();
-                resultDiv.textContent = 'user added: ' + JSON.stringify(data, null, 2);
+
+                if (response.ok) {
+                    document.getElementById('result').textContent = 'Käyttäjä lisätty onnistuneesti!';
+                    // Tyhjennä kentät
+                    document.getElementById('nameInput').value = '';
+                    document.getElementById('emailInput').value = '';
+                } else {
+                    document.getElementById('result').textContent = 'Virhe: ' + data.error;
+                }
             } catch (error) {
-                resultDiv.textContent = 'Error: ' + error.message;
+                    document.getElementById('result').textContent = 'Virhe: ' + error.message;
             }
         }
+        
 
         async function getUsers() {
             try {
