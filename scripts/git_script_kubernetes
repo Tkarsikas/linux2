@@ -4,9 +4,12 @@ git pull
 cp /home/ubuntu/linux2/scripts/git_script_kubernetes /home/ubuntu/scripts/
 echo "git pull done, script copied"
 cp /home/ubuntu/linux2/kubernetes/nginx-pod.yaml /home/ubuntu/kubernetes/
-echo "nginx-pod.yaml copied"
-cp -r /home/ubuntu/linux2/kubernetes/db /home/ubuntu/kubernetes/
-echo "db directory copied"
+cp /home/ubuntu/linux2/kubernetes/backend-configmap.yaml /home/ubuntu/kubernetes/
+cp /home/ubuntu/linux2/kubernetes/backend-deployment.yaml /home/ubuntu/kubernetes/
+cp /home/ubuntu/linux2/kubernetes/frontend-deployment.yaml /home/ubuntu/kubernetes/
+cp /home/ubuntu/linux2/kubernetes/mysql-deployment.yaml /home/ubuntu/kubernetes/
+cp /home/ubuntu/linux2/kubernetes/mysql-pvc.yaml /home/ubuntu/kubernetes/
+echo "kubernetes root files copied"
 cp -r /home/ubuntu/linux2/kubernetes/backend /home/ubuntu/kubernetes/
 echo "backend directory copied"
 cp -r /home/ubuntu/linux2/kubernetes/frontend /home/ubuntu/kubernetes/
