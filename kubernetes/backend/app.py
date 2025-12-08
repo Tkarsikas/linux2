@@ -64,7 +64,7 @@ def add_user():
         cursor.execute("""
             INSERT INTO users (name, email) VALUES
             (%s, %s)
-        """)
+        """, (name, email))
         conn.commit()
         cursor.close()
         conn.close()
