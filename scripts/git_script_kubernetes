@@ -14,6 +14,6 @@ cp -r /home/ubuntu/linux2/kubernetes/backend /home/ubuntu/kubernetes/
 echo "backend directory copied"
 cp -r /home/ubuntu/linux2/kubernetes/frontend /home/ubuntu/kubernetes/
 echo "frontend directory copied"
-sudo cp /home/ubuntu/linux2/kubernetes/minikube-lemp /etc/nginx/sites-available/
-echo "minikube-lemp copied to nginx sites-available"
+sudo cp /home/ubuntu/linux2/lemp-app /etc/nginx/sites-available
+echo "lemp-app copied to nginx sites-available"
 sudo systemctl reload nginx
