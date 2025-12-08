@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import mysql.connector
 import os
 
@@ -59,6 +59,8 @@ def add_user():
         data = request.get_json()
         name = data.get('name')
         email = data.get('email')
+        if not name or not email:
+            return jsonify({"error": "name and email are required"}), 400
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
@@ -67,7 +69,7 @@ def add_user():
         conn.commit()
         cursor.close()
         conn.close()
-        return jsonify({"message": "use added successfully"})
+        return jsonify({"message": "user added successfully"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
