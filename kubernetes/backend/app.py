@@ -54,7 +54,7 @@ def init_db():
         return jsonify({"error": str(e)}), 500
 
 @app.route('/api/add-user', methods=['POST'])
-def add-user():
+def add_user():
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
