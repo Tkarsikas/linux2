@@ -50,6 +50,7 @@
             <button onclick="checkHealth()">Check Backend Health</button>
             <button onclick="initDB()">Initialize Database</button>
             <button onclick="getUsers()">Get Users</button>
+            <button onclick="addUser()">Add User</button>
         </div>
 
         <div id="result"></div>
@@ -75,6 +76,16 @@
                 const response = await fetch('api/init-db');
                 const data = await response.json();
                 resultDiv.textContent = 'DB Init: ' + JSON.stringify(data, null, 2);
+            } catch (error) {
+                resultDiv.textContent = 'Error: ' + error.message;
+            }
+        }
+
+                async function addUser() {
+            try {
+                const response = await fetch('api/add-user');
+                const data = await response.json();
+                resultDiv.textContent = 'user added: ' + JSON.stringify(data, null, 2);
             } catch (error) {
                 resultDiv.textContent = 'Error: ' + error.message;
             }
