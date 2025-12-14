@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name 86.50.23.16;  # oma IP tai domain
+    server_name 86.50.23.190;  # oma IP tai domain
 
     # Etusivu location
     root /var/www/html;

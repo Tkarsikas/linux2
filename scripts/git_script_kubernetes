@@ -3,12 +3,12 @@ cd ~/linux2
 git pull
 cp /home/ubuntu/linux2/scripts/git_script_kubernetes /home/ubuntu/scripts/
 echo "git pull done, script copied"
-cp /home/ubuntu/linux2/kubernetes/k8s/nginx-pod.yaml /home/ubuntu/kubernetes/k8s/
-cp /home/ubuntu/linux2/kubernetes/k8s/backend-configmap.yaml /home/ubuntu/kubernetes/k8s/
-cp /home/ubuntu/linux2/kubernetes/k8s/backend-deployment.yaml /home/ubuntu/kubernetes/k8s/
-cp /home/ubuntu/linux2/kubernetes/k8s/frontend-deployment.yaml /home/ubuntu/kubernetes/k8s/
-cp /home/ubuntu/linux2/kubernetes/k8s/mysql-deployment.yaml /home/ubuntu/kubernetes/k8s/
-cp /home/ubuntu/linux2/kubernetes/k8s/mysql-pvc.yaml /home/ubuntu/kubernetes/k8s/
+cp /home/ubuntu/linux2/kubernetes/k8s/nginx-pod.yaml /home/ubuntu/kubernetes/
+cp /home/ubuntu/linux2/kubernetes/k8s/backend-configmap.yaml /home/ubuntu/kubernetes/
+cp /home/ubuntu/linux2/kubernetes/k8s/backend-deployment.yaml /home/ubuntu/kubernetes/
+cp /home/ubuntu/linux2/kubernetes/k8s/frontend-deployment.yaml /home/ubuntu/kubernetes/
+cp /home/ubuntu/linux2/kubernetes/k8s/mysql-deployment.yaml /home/ubuntu/kubernetes/
+cp /home/ubuntu/linux2/kubernetes/k8s/mysql-pvc.yaml /home/ubuntu/kubernetes/
 echo "kubernetes root files copied"
 cp -r /home/ubuntu/linux2/kubernetes/backend /home/ubuntu/kubernetes/
 echo "backend directory copied"
