@@ -50,7 +50,7 @@ jobs:
       - name: Build & push frontend
         uses: docker/build-push-action@v5
         with:
-          context: Lemp-app-CICD/frontend
+          context: Lemp-app-CICD/backend
           file: Dockerfile
           push: true
           tags: |
