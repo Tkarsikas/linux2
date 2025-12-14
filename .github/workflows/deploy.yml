@@ -38,8 +38,8 @@ jobs:
       - name: Build & push backend
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: Lemp-app-CICD/backend/Dockerfile
+          context: Lemp-app-CICD/backend
+          file: Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/lemp-backend:latest
@@ -50,8 +50,8 @@ jobs:
       - name: Build & push frontend
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: Lemp-app-CICD/frontend/Dockerfile
+          context: Lemp-app-CICD/frontend
+          file: Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/lemp-frontend:latest
