@@ -131,6 +131,33 @@ jobs:
             port: 22
             source: Lemp-app-CICD/docker-compose.prod.yml
             target: /tmp/
+
+        - name: Check docker-compose.prod.yml exists locally
+          run: |
+            if [ ! -f Lemp-app-CICD/docker-compose.prod.yml ]; then
+              echo "ERROR: Lemp-app-CICD/docker-compose.prod.yml not found in repo. Create it or update the workflow." >&2
+              exit 1
+            else
+              echo "Found docker-compose.prod.yml"
+            fi
+
+        - name: Verify docker-compose was copied to VM
+          uses: appleboy/ssh-action@v1.0.3
+          with:
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USER }}
+            key: ${{ secrets.SSH_KEY }}
+            port: 22
+            script: |
+              echo "Checking /tmp for docker-compose.prod.yml"
+              if [ -f /tmp/docker-compose.prod.yml ]; then
+                echo "/tmp/docker-compose.prod.yml present on VM"
+                ls -la /tmp/docker-compose.prod.yml
+              else
+                echo "ERROR: /tmp/docker-compose.prod.yml not found on VM" >&2
+                echo "Listing /tmp:"; ls -la /tmp || true
+                exit 1
+              fi
             # Use docker-compose from Lemp-app-CICD
             # (repo path: Lemp-app-CICD/docker-compose.prod.yml)
 
