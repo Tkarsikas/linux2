@@ -130,7 +130,8 @@ jobs:
             key: ${{ secrets.SSH_KEY }}
             port: 22
             source: Lemp-app-CICD/docker-compose.prod.yml
-            target: /tmp/
+            target: /tmp
+            strip_components: 1
 
         - name: Check docker-compose.prod.yml exists locally
           run: |
