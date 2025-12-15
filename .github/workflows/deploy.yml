@@ -50,7 +50,7 @@ jobs:
       - name: Build & push frontend
         uses: docker/build-push-action@v5
         with:
-          context: Lemp-app-CICD/backend
+          context: Lemp-app-CICD/frontend
           file: Dockerfile
           push: true
           tags: |
@@ -96,7 +96,7 @@ jobs:
             username: ${{ secrets.SSH_USER }}
             key: ${{ secrets.SSH_KEY }}
             port: 22
-            source: db/init/init.sql
+            source: Lemp-app-CICD/db/init.sql
             target: /opt/lemp/db/init/
             strip_components: 2
 
@@ -109,8 +109,10 @@ jobs:
             username: ${{ secrets.SSH_USER }}
             key: ${{ secrets.SSH_KEY }}
             port: 22
-            source: docker-compose.prod.yml
+            source: Lemp-app-CICD/docker-compose.prod.yml
             target: /tmp/
+            # Use docker-compose from Lemp-app-CICD
+            # (repo path: Lemp-app-CICD/docker-compose.prod.yml)
 
         - name: Move docker-compose.prod.yml to /opt/lemp/ on VM
           uses: appleboy/ssh-action@v1.0.3
