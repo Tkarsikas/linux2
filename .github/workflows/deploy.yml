@@ -29,6 +29,26 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Show backend directory (debug)
+        run: |
+          echo "Listing Lemp-app-CICD/backend"
+          ls -la Lemp-app-CICD/backend || true
+          echo "Checking Dockerfile exists"
+          if [ ! -f Lemp-app-CICD/backend/Dockerfile ]; then
+            echo "ERROR: Lemp-app-CICD/backend/Dockerfile not found" >&2
+            exit 1
+          fi
+
+      - name: Show frontend directory (debug)
+        run: |
+          echo "Listing Lemp-app-CICD/frontend"
+          ls -la Lemp-app-CICD/frontend || true
+          echo "Checking Dockerfile exists"
+          if [ ! -f Lemp-app-CICD/frontend/Dockerfile ]; then
+            echo "ERROR: Lemp-app-CICD/frontend/Dockerfile not found" >&2
+            exit 1
+          fi
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -39,7 +59,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: Lemp-app-CICD/backend
-          file: Dockerfile
+          file: Lemp-app-CICD/backend/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/lemp-backend:latest
@@ -51,7 +71,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: Lemp-app-CICD/frontend
-          file: Dockerfile
+          file: Lemp-app-CICD/frontend/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/lemp-frontend:latest
